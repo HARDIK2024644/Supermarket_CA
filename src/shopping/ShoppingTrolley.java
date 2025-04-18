@@ -27,7 +27,7 @@ public class ShoppingTrolley {
     private ArrayList<Object> items;
     
     /**
-     * Create a shopping bag by initialising the items to an empty arraylist
+     * Create a shopping bag by initialisiing the items to an empty arraylist
      */
     public ShoppingTrolley(){
         
