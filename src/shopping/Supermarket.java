@@ -17,7 +17,7 @@ public class Supermarket {
      */
     public static void main(String[] args) {
         
-        ShoppingTrolley myBag = new ShoppingTrolley(); //this is myBag. I can buy things to put in it
+        ShoppingTrolley myBag = new ShoppingTrolley(); //this is myBag. I can buy things to put in it.
         Scanner scanner = new Scanner(System.in);
 
         Product[] products = {
