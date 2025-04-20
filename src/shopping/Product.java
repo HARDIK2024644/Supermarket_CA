@@ -8,8 +8,8 @@ package shopping;
  *
  * @author hardi
  */
-class Product {
-
+// Parent class for all products
+public class Product {
     protected String name;
     protected double price;
 
@@ -26,9 +26,9 @@ class Product {
         return price;
     }
 
+    // This method will be called in ShoppingTrolley when printing items
     @Override
     public String toString() {
         return name + " - €" + price;
-    }
-    
+    }    
 }

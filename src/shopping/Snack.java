@@ -8,6 +8,7 @@ package shopping;
  *
  * @author hardi
  */
+// Subclass of Product, used for snacks
 public class Snack extends Product {
 
     public Snack(String name, double price) {

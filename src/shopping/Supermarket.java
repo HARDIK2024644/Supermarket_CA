@@ -16,10 +16,12 @@ public class Supermarket {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        ShoppingTrolley myBag = new ShoppingTrolley(); //this is myBag. I can buy things to put in it.
+        // Create scanner for user input
         Scanner scanner = new Scanner(System.in);
+        // Create shopping bag (trolley) using given class
+        ShoppingTrolley myBag = new ShoppingTrolley();
 
+        // Create sample products
         Product[] products = {
             new Fruit("Apple", 0.50),
             new Fruit("Banana", 0.30),
@@ -27,28 +29,39 @@ public class Supermarket {
             new Snack("Chocolate", 0.99)
         };
 
+        // Infinite loop until checkout
         while (true) {
-            System.out.println("\n--- Welcome to the Console Supermarket ---");
+            // Show product menu
+            System.out.println("\nAvailable Items:");
             for (int i = 0; i < products.length; i++) {
-                System.out.println((i + 1) + ". " + products[i]);
+                System.out.println((i + 1) + ". " + products[i].toString());
             }
             System.out.println((products.length + 1) + ". Proceed to Checkout");
 
+            // Ask user choice
             System.out.print("Choose item number: ");
             int choice = scanner.nextInt();
 
             if (choice == products.length + 1) {
-                break;
+                break; // Go to checkout
             }
 
+            // If invalid item number
             if (choice < 1 || choice > products.length) {
-                System.out.println("Invalid choice. Try again.");
+                System.out.println("Invalid choice, please try again.");
                 continue;
             }
 
+            // Ask for quantity
             System.out.print("Enter quantity: ");
             int qty = scanner.nextInt();
 
+            if (qty <= 0) {
+                System.out.println("Invalid quantity. Try again.");
+                continue;
+            }
+
+            // Add item to shopping trolley
             for (int i = 0; i < qty; i++) {
                 myBag.buyItem(products[choice - 1]);
             }
@@ -56,6 +69,7 @@ public class Supermarket {
             System.out.println(qty + " x " + products[choice - 1].getName() + " added to trolley.");
         }
 
+        // Checkout: Print items and empty trolley
         System.out.println("\n--- Checkout ---");
         String items = myBag.emptyTrolley();
         System.out.println("Items bought:\n" + items);

@@ -8,6 +8,7 @@ package shopping;
  *
  * @author hardi
  */
+//Sub Class Of Product , Will Be Used for FRuits
 public class Fruit extends Product {
 
     public Fruit(String name, double price) {
