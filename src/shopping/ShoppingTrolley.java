@@ -62,4 +62,15 @@ public class ShoppingTrolley {
         
         return itemList;
     }
+    public double getTotalPrice() {
+        double total = 0.0;
+        for (Object item : this.items) {
+            if (item instanceof Product) {
+                Product product = (Product) item;
+                total += product.getPrice();
+                }
+        }
+        return total;
+    }
 }
+        
