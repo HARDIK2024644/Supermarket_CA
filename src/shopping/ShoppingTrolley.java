@@ -49,28 +49,18 @@ public class ShoppingTrolley {
      * @return the formatted String
      * Also clears the items list -- 'empties the bag'
      */
-    public String emptyTrolley(){
-        
+    public String emptyTrolley() {
         String itemList = "";
-        
-        for(Object item: this.items){
-            
+
+        // Loop over all items and build a string
+        for (Object item : this.items) {
             itemList = itemList + item.toString() + "\n";
         }
-        
+
+        // Clear the trolley (empty the list)
         this.items.clear();
-        
+
         return itemList;
-    }
-    public double getTotalPrice() {
-        double total = 0.0;
-        for (Object item : this.items) {
-            if (item instanceof Product) {
-                Product product = (Product) item;
-                total += product.getPrice();
-                }
-        }
-        return total;
     }
 }
         
