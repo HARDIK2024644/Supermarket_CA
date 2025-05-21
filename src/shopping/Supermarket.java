@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author kheal
+ * 
  */
 public class Supermarket {
 
